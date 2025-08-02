@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARTOON CRAZYRUBIC ADVENTURE</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'CRAZYRUBIC';
+            src: url('Crazyrubic-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #FFE4E1;
+            color: #2B2B2B;
+            font-family: 'CRAZYRUBIC', Arial, sans-serif;
+            text-transform: uppercase;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #FF6B6B;
+            border: 5px solid #FF1744;
+            border-radius: 25px;
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .header-decoration {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #FFEB3B;
+            width: 100px;
+            height: 30px;
+            border-radius: 50px;
+            border: 3px solid #FF9800;
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: white;
+            text-shadow: 3px 3px 0px #FF1744;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            color: #FFEB3B;
+            text-shadow: 2px 2px 0px #FF9800;
+            margin-bottom: 15px;
+        }
+
+        .cartoon-nav {
+            background-color: #4CAF50;
+            border: 4px solid #2E7D32;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 30px 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .nav-item {
+            background-color: #81C784;
+            border: 3px solid #2E7D32;
+            border-radius: 15px;
+            padding: 15px 25px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover {
+            background-color: #66BB6A;
+            transform: scale(1.05);
+        }
+
+        .nav-item .material-icons {
+            font-size: 24px;
+        }
+
+        .cartoon-section {
+            background-color: #E1BEE7;
+            border: 5px solid #9C27B0;
+            border-radius: 25px;
+            padding: 30px;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #6A1B9A;
+            text-align: center;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 0px #E1BEE7;
+        }
+
+        .character-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .character-card {
+            background-color: #FFF9C4;
+            border: 4px solid #F57F17;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+        }
+
+        .character-icon {
+            font-size: 48px;
+            color: #FF5722;
+            margin-bottom: 15px;
+        }
+
+        .character-name {
+            font-size: 1.8rem;
+            color: #E65100;
+            margin-bottom: 10px;
+        }
+
+        .character-desc {
+            font-size: 1rem;
+            color: #BF360C;
+            line-height: 1.4;
+        }
+
+        .fun-facts {
+            background-color: #BBDEFB;
+            border: 5px solid #1976D2;
+            border-radius: 25px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .fact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .fact-item {
+            background-color: #E3F2FD;
+            border: 3px solid #0D47A1;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .fact-icon {
+            font-size: 36px;
+            color: #1565C0;
+            margin-bottom: 10px;
+        }
+
+        .fact-text {
+            font-size: 1.1rem;
+            color: #0D47A1;
+            line-height: 1.3;
+        }
+
+        .adventure-zone {
+            background-color: #FFCDD2;
+            border: 5px solid #D32F2F;
+            border-radius: 25px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .adventure-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .adventure-btn {
+            background-color: #FF5252;
+            border: 4px solid #C62828;
+            border-radius: 20px;
+            padding: 20px 30px;
+            color: white;
+            font-size: 1.3rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .adventure-btn:hover {
+            background-color: #FF1744;
+            transform: rotate(-2deg) scale(1.05);
+        }
+
+        .adventure-btn .material-icons {
+            font-size: 28px;
+        }
+
+        .comic-strip {
+            background-color: #C8E6C9;
+            border: 5px solid #388E3C;
+            border-radius: 25px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .comic-panels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .comic-panel {
+            background-color: white;
+            border: 4px solid #1B5E20;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        .panel-number {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            background-color: #FFEB3B;
+            border: 3px solid #F57C00;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #E65100;
+        }
+
+        .panel-icon {
+            font-size: 40px;
+            color: #2E7D32;
+            margin-bottom: 10px;
+        }
+
+        .panel-text {
+            font-size: 1rem;
+            color: #1B5E20;
+            line-height: 1.3;
+        }
+
+        footer {
+            background-color: #FF9800;
+            border: 5px solid #E65100;
+            border-radius: 25px;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            color: white;
+            font-size: 1.5rem;
+            text-shadow: 2px 2px 0px #BF360C;
+        }
+
+        .floating-shapes {
+            position: fixed;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .shape1 {
+            top: 10%;
+            left: 5%;
+            width: 60px;
+            height: 60px;
+            background-color: #FFEB3B;
+            border-radius: 50%;
+            border: 3px solid #FF9800;
+        }
+
+        .shape2 {
+            top: 20%;
+            right: 10%;
+            width: 40px;
+            height: 40px;
+            background-color: #E91E63;
+            transform: rotate(45deg);
+            border: 3px solid #AD1457;
+        }
+
+        .shape3 {
+            bottom: 30%;
+            left: 8%;
+            width: 50px;
+            height: 30px;
+            background-color: #00BCD4;
+            border-radius: 25px;
+            border: 3px solid #0097A7;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .cartoon-nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .adventure-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-shapes">
+        <div class="shape1"></div>
+        <div class="shape2"></div>
+        <div class="shape3"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="header-decoration"></div>
+            <h1>CARTOON WORLD</h1>
+            <div class="subtitle">FEATURING CRAZYRUBIC FONT</div>
+        </header>
+
+        <nav class="cartoon-nav">
+            <a href="#" class="nav-item">
+                <span class="material-icons">home</span>
+                HOME
+            </a>
+            <a href="#" class="nav-item">
+                <span class="material-icons">star</span>
+                CHARACTERS
+            </a>
+            <a href="#" class="nav-item">
+                <span class="material-icons">games</span>
+                GAMES
+            </a>
+            <a href="#" class="nav-item">
+                <span class="material-icons">movie</span>
+                VIDEOS
+            </a>
+        </nav>
+
+        <section class="cartoon-section">
+            <h2 class="section-title">MEET THE CHARACTERS</h2>
+            <div class="character-showcase">
+                <div class="character-card">
+                    <div class="character-icon material-icons">pets</div>
+                    <div class="character-name">SUPER CAT</div>
+                    <div class="character-desc">THE BRAVE HERO WHO SAVES THE DAY WITH AMAZING POWERS</div>
+                </div>
+                
+                <div class="character-card">
+                    <div class="character-icon material-icons">rocket_launch</div>
+                    <div class="character-name">SPACE DOG</div>
+                    <div class="character-desc">TRAVELS THROUGH GALAXIES IN SEARCH OF COSMIC ADVENTURES</div>
+                </div>
+                
+                <div class="character-card">
+                    <div class="character-icon material-icons">castle</div>
+                    <div class="character-name">MAGIC MOUSE</div>
+                    <div class="character-desc">LIVES IN A MAGICAL CASTLE AND GRANTS WISHES TO FRIENDS</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="fun-facts">
+            <h2 class="section-title" style="color: #0D47A1;">FUN CARTOON FACTS</h2>
+            <div class="fact-grid">
+                <div class="fact-item">
+                    <div class="fact-icon material-icons">palette</div>
+                    <div class="fact-text">CARTOONS USE BRIGHT COLORS TO MAKE KIDS HAPPY</div>
+                </div>
+                
+                <div class="fact-item">
+                    <div class="fact-icon material-icons">music_note</div>
+                    <div class="fact-text">CARTOON SOUNDS ARE MADE WITH FUNNY INSTRUMENTS</div>
+                </div>
+                
+                <div class="fact-item">
+                    <div class="fact-icon material-icons">brush</div>
+                    <div class="fact-text">ARTISTS DRAW THOUSANDS OF PICTURES FOR ONE CARTOON</div>
+                </div>
+                
+                <div class="fact-item">
+                    <div class="fact-icon material-icons">favorite</div>
+                    <div class="fact-text">CARTOONS TEACH US ABOUT FRIENDSHIP AND KINDNESS</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="adventure-zone">
+            <h2 class="section-title" style="color: #B71C1C;">ADVENTURE ZONE</h2>
+            <div class="adventure-buttons">
+                <a href="#" class="adventure-btn">
+                    <span class="material-icons">explore</span>
+                    TREASURE HUNT
+                </a>
+                
+                <a href="#" class="adventure-btn">
+                    <span class="material-icons">sports_esports</span>
+                    PLAY GAMES
+                </a>
+                
+                <a href="#" class="adventure-btn">
+                    <span class="material-icons">quiz</span>
+                    TAKE QUIZ
+                </a>
+            </div>
+        </section>
+
+        <section class="comic-strip">
+            <h2 class="section-title" style="color: #1B5E20;">COMIC STRIP STORY</h2>
+            <div class="comic-panels">
+                <div class="comic-panel">
+                    <div class="panel-number">1</div>
+                    <div class="panel-icon material-icons">wb_sunny</div>
+                    <div class="panel-text">ONE SUNNY MORNING IN CARTOON LAND</div>
+                </div>
+                
+                <div class="comic-panel">
+                    <div class="panel-number">2</div>
+                    <div class="panel-icon material-icons">person_search</div>
+                    <div class="panel-text">OUR HEROES DISCOVER A MYSTERY</div>
+                </div>
+                
+                <div class="comic-panel">
+                    <div class="panel-number">3</div>
+                    <div class="panel-icon material-icons">group</div>
+                    <div class="panel-text">THEY WORK TOGETHER AS A TEAM</div>
+                </div>
+                
+                <div class="comic-panel">
+                    <div class="panel-number">4</div>
+                    <div class="panel-icon material-icons">celebration</div>
+                    <div class="panel-text">AND CELEBRATE THEIR SUCCESS</div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                WELCOME TO THE CARTOON UNIVERSE<br>
+                WHERE IMAGINATION COMES TO LIFE
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
